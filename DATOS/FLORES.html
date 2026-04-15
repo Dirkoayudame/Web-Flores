@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>FLORES</title>
 </head>
 
@@ -275,6 +277,39 @@
         </div>
       </div>
     </div>
+    <!-- Osos buchones -->
+    <div class="buchon-bears">
+      <span class="bear bear--left">🐻</span>
+      <span class="bear bear--right">🐻</span>
+    </div>
+
+    <!-- Celofán del ramo -->
+    <div class="buchon-celofan">
+      <span class="buchon-lazo">🎀</span>
+      <span class="buchon-tag">💌 Pa' mi elfa</span>
+    </div>
+
+    <!-- Floaters buchones -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Tarjeta de dedicatoria buchona -->
+    <div class="message-card" id="message-card">
+      <div class="message-card__inner">
+        <span class="message-card__icon">💐</span>
+        <h2>Pa' mi reina, mi elfa 👑</h2>
+        <p>
+          Te mando este ramo buchón con todo mi amor,<br>
+          puras flores de las caras pa' la más chida. 🌹<br><br>
+          Eres lo más bonito de mi vida,<br>
+          y te lo mereces todo, mi elfa. ❤️✨
+        </p>
+        <div class="buchon-iconos">🐻 💎 🍫 🎀 🌹 💕</div>
+        <button class="message-card__close" onclick="document.getElementById('message-card').classList.remove('visible')">
+          Con todo mi amor 💖
+        </button>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

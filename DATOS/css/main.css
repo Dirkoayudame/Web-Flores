@@ -1347,4 +1347,300 @@ body {
 .container * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/* ==========================================
+   MEJORAS ROMÁNTICAS — para mi elfa especial
+   ========================================== */
+
+:root {
+  --dark-color: #08000f;
+}
+
+.night {
+  background-image:
+    radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
+    radial-gradient(ellipse at bottom, var(--dark-color), rgba(180, 60, 255, 0.12)),
+    repeating-linear-gradient(220deg, rgba(0,0,0,0.85) 0px, rgba(0,0,0,0.85) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(189deg, rgba(0,0,0,0.85) 0px, rgba(0,0,0,0.85) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(148deg, rgba(0,0,0,0.85) 0px, rgba(0,0,0,0.85) 19px, transparent 19px, transparent 22px),
+    linear-gradient(90deg, rgb(70, 0, 110), rgb(140, 20, 90));
+}
+
+/* Cuarta flor: posición y animación */
+.flower--4 {
+  left: -25%;
+  transform: rotate(-10deg);
+  animation: moving-flower-4 5s linear infinite;
+}
+.flower--4 .flower__line {
+  height: 65vmin;
+  animation-delay: 0.4s;
+}
+.flower--4 .flower__line__leaf--1 {
+  animation: blooming-leaf-right var(--fl-speed) 2.2s backwards;
+}
+.flower--4 .flower__line__leaf--2 {
+  animation: blooming-leaf-right var(--fl-speed) 2.0s backwards;
+}
+.flower--4 .flower__line__leaf--3 {
+  animation: blooming-leaf-left var(--fl-speed) 1.8s backwards;
+}
+.flower--4 .flower__line__leaf--4 {
+  animation: blooming-leaf-left var(--fl-speed) 1.6s backwards;
+}
+.flower__leafs--4 {
+  animation-delay: 2s;
+}
+@keyframes moving-flower-4 {
+  0%, 100% { transform: rotate(-10deg); }
+  50%       { transform: rotate(-14deg) rotateY(-5deg); }
+}
+
+/* Flores 2 y 4 en rosa */
+.flower--2 .flower__leaf,
+.flower--4 .flower__leaf {
+  background-image: linear-gradient(to top, #ff69b4, #e91e8c) !important;
+  background-color: #c2185b !important;
+}
+.flower--2 .flower__leaf--4,
+.flower--4 .flower__leaf--4 {
+  background-image: linear-gradient(to top, #ff69b4, #e91e8c) !important;
+}
+.flower--2 .flower__leafs::after,
+.flower--4 .flower__leafs::after {
+  background-color: #c2185b !important;
+}
+.flower--2 .flower__light,
+.flower--4 .flower__light {
+  background-color: #ff69b4 !important;
+}
+.flower--2 .flower__light:nth-child(odd),
+.flower--4 .flower__light:nth-child(odd) {
+  background-color: #ff1493 !important;
+}
+
+/* ===== RAMO BUCHÓN ===== */
+
+/* Osos en los costados */
+.buchon-bears {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vmin;
+  z-index: 9;
+  pointer-events: none;
+}
+.bear {
+  position: absolute;
+  font-size: 5vmin;
+  bottom: 1vmin;
+  filter: drop-shadow(0 0 8px rgba(255, 180, 50, 0.6));
+}
+.bear--left  { left: 0;  animation: bear-sway-l 3s 0.3s ease-in-out infinite; }
+.bear--right { right: 0; animation: bear-sway-r 3s 0.7s ease-in-out infinite; }
+@keyframes bear-sway-l {
+  0%, 100% { transform: rotate(-12deg); }
+  50%       { transform: rotate(-7deg) translateY(-3px); }
+}
+@keyframes bear-sway-r {
+  0%, 100% { transform: rotate(12deg) scaleX(-1); }
+  50%       { transform: rotate(7deg) scaleX(-1) translateY(-3px); }
+}
+
+/* Celofán del ramo */
+.buchon-celofan {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52vmin;
+  height: 28vmin;
+  z-index: 8;
+  pointer-events: none;
+}
+.buchon-celofan::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 215, 0, 0.14) 0%,
+    rgba(255, 180, 210, 0.10) 50%,
+    rgba(255, 215, 0, 0.07) 100%
+  );
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  border-bottom: none;
+  border-radius: 40% 40% 0 0 / 20% 20% 0 0;
+  box-shadow: inset 0 0 40px rgba(255, 215, 0, 0.06), 0 0 40px rgba(255, 180, 50, 0.15);
+}
+.buchon-celofan::after {
+  content: '';
+  position: absolute;
+  top: 8%; left: 22%;
+  width: 5px; height: 55%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.35), transparent);
+  border-radius: 50%;
+  transform: skewX(-8deg);
+}
+.buchon-lazo {
+  position: absolute;
+  top: -3.5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4vmin;
+  z-index: 10;
+  animation: lazo-pulse 2s ease-in-out infinite;
+}
+@keyframes lazo-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1)    rotate(-5deg); }
+  50%       { transform: translateX(-50%) scale(1.15) rotate(5deg); }
+}
+.buchon-tag {
+  position: absolute;
+  bottom: 30%; left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  background: rgba(255, 240, 245, 0.93);
+  color: #c2185b;
+  font-size: max(1.4vmin, 10px);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(200, 0, 100, 0.3);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+/* Íconos buchones en tarjeta */
+.buchon-iconos {
+  font-size: 1.4rem;
+  letter-spacing: 6px;
+  margin-bottom: 22px;
+  animation: iconos-glow 2s ease-in-out infinite;
+}
+@keyframes iconos-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(255,215,0,0.4)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(255,100,150,0.7)); }
+}
+
+/* Estrellas en página de flores */
+#stars-flores {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.star-f {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle-f var(--d, 3s) var(--delay, 0s) ease-in-out infinite alternate;
+}
+@keyframes twinkle-f {
+  0%   { opacity: 0.05; }
+  100% { opacity: 0.9; }
+}
+
+/* Corazones flotantes */
+.hearts-container {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+.heart-float {
+  position: absolute;
+  bottom: -60px;
+  line-height: 1;
+  animation: float-heart var(--duration, 7s) var(--delay, 0s) ease-in forwards;
+  opacity: 0;
+}
+@keyframes float-heart {
+  0%   { opacity: 0;   transform: translateY(0)     rotate(0deg)          scale(0.6); }
+  10%  { opacity: 1;   transform: translateY(-8vh)  scale(1); }
+  90%  { opacity: 0.7; }
+  100% { opacity: 0;   transform: translateY(-115vh) rotate(var(--rot, 20deg)) scale(0.7); }
+}
+
+/* Tarjeta de mensaje romántico */
+.message-card {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  background: rgba(8, 0, 15, 0.7);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.message-card.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.message-card__inner {
+  background: linear-gradient(135deg, rgba(50, 0, 70, 0.97), rgba(90, 10, 50, 0.97));
+  border: 1px solid rgba(255, 100, 150, 0.4);
+  border-radius: 24px;
+  padding: 45px 55px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 80px rgba(255, 20, 147, 0.3), inset 0 0 40px rgba(200, 0, 100, 0.05);
+  transform: translateY(25px);
+  transition: transform 0.8s ease;
+}
+.message-card.visible .message-card__inner {
+  transform: translateY(0);
+}
+.message-card__icon {
+  font-size: 3rem;
+  margin-bottom: 14px;
+  display: block;
+  animation: pulse-icon 1.5s ease-in-out infinite;
+}
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.25); }
+}
+.message-card__inner h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ffb3d9;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(255, 100, 150, 0.6);
+}
+.message-card__inner p {
+  color: #f0ccd9;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.message-card__close {
+  background: linear-gradient(135deg, #c2185b, #e91e8c);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(233, 30, 140, 0.45);
+}
+.message-card__close:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(233, 30, 140, 0.65);
+}
+
+/*# sourceMappingURL=main.css.map */

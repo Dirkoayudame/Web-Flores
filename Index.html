@@ -9,28 +9,47 @@
     <title>FLORES</title>
 </head>
 <body>
-    <div class="greetings">
+    <div id="stars"></div>
 
+    <div class="greetings">
         <span>H</span>
         <span>O</span>
         <span>L</span>
         <span>A</span>
     </div>
     <div class="greetings">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span>🌸</span>
+        <span>🌺</span>
+        <span>🌷</span>
+        <span>🌸</span>
+        <span>🌼</span>
     </div>
     <div class="description">
-        <span>SON PARA TI <3</span>
+        <span>SON PARA TI ❤️</span>
     </div>
+    <p class="subtitle">para mi elfa especial ✨</p>
     <div class="button">
         <button>
             <a href="DATOS/FLORES.html">CLICK PLEASE</a>
         </button>
     </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 130; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.5 + 0.5;
+            star.style.cssText = `
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                width: ${size}px;
+                height: ${size}px;
+                --d: ${(Math.random() * 3 + 1.5).toFixed(1)}s;
+                --delay: ${(Math.random() * 4).toFixed(1)}s;
+            `;
+            starsContainer.appendChild(star);
+        }
+    </script>
 </body>
 </html>
